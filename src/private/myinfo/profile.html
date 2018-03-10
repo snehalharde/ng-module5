@@ -1,0 +1,5 @@
+<h1> Profile Information </h1>
+<div class="container">
+<div ng-if="!profileCtrl.profileInformation" > Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a></div>
+<profile-information profile-data= "profileCtrl.profileInformation"></profile-information>
+</div>

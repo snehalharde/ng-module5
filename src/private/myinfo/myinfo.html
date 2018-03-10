@@ -1,0 +1,8 @@
+<div ng-if= "$ctrl.profileData">
+  <div class="col-md-11"> First Name : {{$ctrl.profileData.firstName}}</div>
+  <div class="col-md-11"> Last Name : {{ $ctrl.profileData.lastName}}</div>
+  <div class="col-md-11"> e-Mail  : {{ $ctrl.profileData.eMail}} </div>
+  <div class="col-md-11">Phone Number : {{$ctrl.profileData.phoneNumber}}</div>
+  <div class="col-md-11">Preference : </div>
+  <menu-item menu-item="$ctrl.profileData.menuItem"></menu-item>
+</div>

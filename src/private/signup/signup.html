@@ -1,0 +1,56 @@
+
+<div class="container">
+    <h1>Simple Form Validation</h1>
+
+    <fieldset>
+      <legend>Registration</legend>
+      <div class="form-group">
+      <form name='regForm'>
+
+        <input type="text" name="firstname" placeholder="Enter First name" class="form-control" 
+          ng-model="signupCtrl.firstname"
+          required>        
+          <br>
+
+          <!-- Check for last name -->
+          <input type="text" name="lastname" placeholder="Enter Last name" class="form-control" 
+          ng-model="signupCtrl.lastname"
+          required>          
+          <br>
+          <input type="email" name="email" placeholder="Email" class="form-control" 
+          ng-model="signupCtrl.email"
+          required>
+          <br>
+
+          <input type="text" name="phone" placeholder="Phone ###-###-####" class="form-control" 
+          ng-model="signupCtrl.phone"
+          >
+          <br>
+          <!-- Check for shortname -->
+          <input type="text" name="shortname" placeholder="Favorite menu item short name like L" class="form-control" 
+          ng-model="signupCtrl.shortname" >
+          <br>
+<!-- ng-keyup="signupCtrl.validateShortName()" -->
+        </div>
+        <button class="btn btn-default" type="submit"
+          ng-disabled="regForm.$invalid"
+          ng-click="signupCtrl.submit()">Submit</button>
+
+      </form>
+
+    </fieldset>
+
+    <div class="form-group">
+        <div class="alert alert-danger" role="alert" ng-if="signupCtrl.error">
+          Hmm, try something else, like A1 or C1 or L1
+        </div>
+        <div class="alert alert-success" role="alert" ng-if="signupCtrl.register" >
+          Your information has been saved.
+        </div>
+        <br>
+      </div>
+
+
+ </div>
+
+
