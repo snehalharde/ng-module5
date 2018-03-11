@@ -36,6 +36,7 @@ var customers =[];
         'email': email,
         'phone': phone,
         'shortname': shortname
+
     }
     customers.push(customer);
   }
@@ -46,15 +47,15 @@ var customers =[];
         }  
         
    
-    service.favMenu = function(shortname){
-      var favParams={
-        "shortname":shortname
-      }
-      return $http.get(ApiPath + '/menu_items.json',params).then(function (response) {
-        console.log("favmenu : :",response.data)
-      return response.data;
-    });
-    }
+    // service.favMenu = function(shortname){
+    //   var favParams={
+    //     "shortname":shortname
+    //   }
+    //   return $http.get(ApiPath + '/menu_items.json',params).then(function (response) {
+    //     console.log("favmenu : :",response.data)
+    //   return response.data;
+    // });
+    // }
 
 }
 
