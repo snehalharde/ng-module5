@@ -1,4 +1,11 @@
-	<!-- <ul>
-		<li ng-repeat= "item in $ctrl.myinfo">{{$ctrl.myinfo.lastname}} </li>
-	</ul> -->
-	<div>{{infoCtrl.myInfo.lastname}}</div>
+<div class="container">
+  <h2 class="text-center">About Me</h2>
+<profile-info 
+request ='infoCtrl.customerInfo.request'
+
+></profile-info>
+<menu-item menuitems ='infoCtrl.customerInfo.menuitems'></menu-item>
+</div>
+<div ng-if="!infoCtrl.customerInfo">
+    Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a>
+  </div>

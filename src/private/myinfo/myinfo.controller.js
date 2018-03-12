@@ -5,14 +5,11 @@
   angular.module('private')
   .controller('InfoController', InfoController);
 
-  InfoController.$inject = ['customerInfo'];
-  function InfoController(customerInfo){
+  InfoController.$inject = ['customerInfo','MenuService'];
+  function InfoController(customerInfo,MenuService){
       var infoCtrl = this ;
       infoCtrl.customerInfo = customerInfo;
-      console.log(customerInfo)
-     infoCtrl.getMenuItems = function(){
-      console.log("")
-     }
-
+      
+          
   }
 })();

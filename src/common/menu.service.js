@@ -23,39 +23,35 @@ function MenuService($http, ApiPath) {
     }
 
     return $http.get(ApiPath + '/menu_items.json', config).then(function (response) {
-      
+      console.log("response.data ", config)
       return response.data;
     });
   };
-var customers =[];
-  service.addItem = function(firstname, lastname, email, phone, shortname){
-    
-    var customer ={
-      'firstname':firstname,
-        'lastname':lastname,
-        'email': email,
-        'phone': phone,
-        'shortname': shortname
 
-    }
-    customers.push(customer);
+
+  var customer = null;
+  service.addItem = function(request,menuitems){
+    customer = {};
+    customer.menuitems= menuitems;
+    customer.request = request;
+   
   }
 
    service.getItems = function () {
      // body
-      return customers;
+      console.log(customer)
+      return customer;
         }  
         
-   
-    // service.favMenu = function(shortname){
-    //   var favParams={
-    //     "shortname":shortname
-    //   }
-    //   return $http.get(ApiPath + '/menu_items.json',params).then(function (response) {
-    //     console.log("favmenu : :",response.data)
-    //   return response.data;
-    // });
-    // }
+   service.getRequest= function() {
+    
+      return customer.request;
+        }
+
+        service.getMenuitems= function () {
+          // body...
+          return customer.menuitems;
+        }
 
 }
 

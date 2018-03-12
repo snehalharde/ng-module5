@@ -18,18 +18,14 @@ function routeConfig ($stateProvider) {
     })
    
     .state('private.signup', {
-      url: '/signup/{itemId}',
+      url: '/signup',
        templateUrl: 'src/private/signup/signup.html',
        controller: 'SignupController as signupCtrl'
-      // resolve:{
-      //   favMenu:['$stateParams','MenuService', function($stateParams,MenuService){
-      //     return MenuService.getMenuItems($stateParams.itemId);
-      //   }]
-      
+     
     })
     .state('private.myinfo', {
-      url: '/myinfo/{shortname}',
-      templateUrl: 'src/private/myinfo/profile.html',
+      url: '/myinfo',
+      templateUrl: 'src/private/myinfo/myinfo.html',
       controller: 'InfoController as infoCtrl',
        resolve: {
         customerInfo: ['MenuService', function (MenuService) {
@@ -37,16 +33,6 @@ function routeConfig ($stateProvider) {
         }]
       }
     });
-    // .state('public.menuitems', {
-    //   url: '/menu/{category}',
-    //   templateUrl: 'src/public/menu-items/menu-items.html',
-    //   controller: 'MenuItemsController',
-    //   controllerAs: 'menuItemsCtrl',
-    //   resolve: {
-    //     menuItems: ['$stateParams','MenuService', function ($stateParams, MenuService) {
-    //       return MenuService.getMenuItems($stateParams.category);
-    //     }]
-    //   }
-    // });
+    
 }
 })();

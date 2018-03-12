@@ -3,9 +3,10 @@
 
 angular.module('private')
 .component('profileInfo',{
-  templateUrl: 'src/private/myinfo/myinfo.html',
+  templateUrl: 'src/private/myinfo/profile.html',
   bindings : {
-    myInfo: '<'
+    request: '<',
+    menuitems:'<'
   }
 })
 })();

@@ -1,6 +1,22 @@
-<h1> Profile Information </h1>
-<div class="container">
-<div ng-if="!infoCtrl.customerInfo"> Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a></div>
-<profile-info myInfo = "infoCtrl.customerInfo"></profile-info>
 
-</div>
+  <div>
+   
+  First Name: {{ $ctrl.request.firstname}}
+
+  <br/>
+  Last Name: {{ $ctrl.request.lastname }}
+  <br/>
+  Email: {{ $ctrl.request.email }}
+  <br/>
+  Phone: {{ $ctrl.request.phone }}
+  <br/>
+  <h3>
+  Favorite Dish: 
+  </h3>
+  <hr>
+  <ul>
+    <li ng-repeat="item in $ctrl.menuitems">{{item.name}}</li>
+
+  </ul>
+  </div>
+  

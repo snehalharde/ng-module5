@@ -5,31 +5,33 @@
     <fieldset>
       <legend>Registration</legend>
       <div class="form-group">
-      <form name='regForm'>
+      <form name='regForm' novalidate>
 
         <input type="text" name="firstname" placeholder="Enter First name" class="form-control" 
-          ng-model="signupCtrl.firstname"
+          ng-model="signupCtrl.request.firstname"
           required>        
           <br>
 
           <!-- Check for last name -->
           <input type="text" name="lastname" placeholder="Enter Last name" class="form-control" 
-          ng-model="signupCtrl.lastname"
+          ng-model="signupCtrl.request.lastname"
           required>          
           <br>
           <input type="email" name="email" placeholder="Email" class="form-control" 
-          ng-model="signupCtrl.email"
+          ng-model="signupCtrl.request.email"
           required>
           <br>
 
           <input type="text" name="phone" placeholder="Phone ###-###-####" class="form-control" 
-          ng-model="signupCtrl.phone"
+          ng-model="signupCtrl.request.phone"
           >
           <br>
           <!-- Check for shortname -->
+          <!-- <validate-shortname shortname= 'signupCtrl.request.shortname'> -->
           <input type="text" name="shortname" placeholder="Favorite menu item short name like L" class="form-control" 
-          ng-model="signupCtrl.shortname" >
+          ng-model="signupCtrl.request.shortname"  >
           <br>
+          <!-- </validate-shortname> -->
 <!-- ng-keyup="signupCtrl.validateShortName()" -->
         </div>
         <button class="btn btn-default" type="submit"
@@ -41,12 +43,12 @@
     </fieldset>
 
     <div class="form-group">
-        <div class="alert alert-danger" role="alert" ng-show="signupCtrl.error">
-          Hmm, try something else, like A1 or C1 or L1
+        <div class="alert alert-danger" role="alert" ng-if="signupCtrl.success">
+          {{signupCtrl.success}}
         </div>
           </div>
-        <div class="alert alert-success" role="alert" ng-show="signupCtrl.register" >
-          Your information has been saved.
+        <div class="alert alert-success" role="alert" ng-if="signupCtrl.error" >
+          {{signupCtrl.error}}
         </div>
         
     
